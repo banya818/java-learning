@@ -24,7 +24,7 @@
 ## 环境
 
 - **JDK 24.0.1**。编译：`javac -encoding UTF-8 -d out src/xxx.java`；运行加 `-Dstdout.encoding=UTF-8` 防中文乱码
-- **Git 2.55**，GitHub 账号 `Banya618`，仓库 `java-learning`
+- **Git 2.55**，GitHub 账号 **`banya818`**（全小写；remote 地址必须用它，写成 Banya618 会报 Repository not found），仓库 `java-learning`
 - **洛谷**用 Java 提交，**类名必须是 `Main`**，不能有 package
 - 桌面有一份进度副本：`C:\Users\ZhuanZ\Desktop\Java学习进度.md`
 
