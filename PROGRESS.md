@@ -21,6 +21,7 @@
 - 我学不动时会换任务（学日语），不用劝
 - 我会焦虑进度（"能赶上吗"），给真实数字，不要安慰
 - **给命令时写完整可复制的一行**（引号、路径闭合），我会把它存进 `notes/常用命令.md` —— 别让我自己拼
+- **批代码只挑会让答案出错的错**：变量名我自己起（`totle`/`doro`/`a` 这种），`Scanner` 是我练手用的。**拼写、命名规范、要不要 Scanner 一律不用管**；逻辑错、死代码、边界漏判可以指出来
 
 ## 环境
 
@@ -93,13 +94,30 @@
 
 ## Git 工作流
 
+**三种提交方式，各管一段：**
+
 | 触发方式 | 谁做 | commit 信息 |
 | --- | --- | --- |
 | 我说「学完 XXX」 | AI 一条龙：改文件 + commit + push | 「进度 0145」有意义 |
 | 我写完好代码 | 双击桌面 `提交Java学习代码.bat` | auto 通用 |
-| 我忘了 | 计划任务每天 23:30 自动跑 | auto 通用 |
+| 我忘了 | 计划任务每天 **23:30** 自动跑 | auto 通用 |
 
-仓库：`https://github.com/banya818/java-learning`
+**手动**
+- `./sync.sh` —— 同步到桌面 + commit + push（最常用）
+- `./commit.sh "说明"` —— 只 commit 不 push
+- 桌面 `C:\Users\ZhuanZ\Desktop\提交Java学习代码.bat` —— 双击即提交推送
+
+**自动**
+- Windows 计划任务名：`JavaLearningAutoCommit`
+- 每天 **23:30** 运行 `auto-commit.sh`，有改动才提交，没改动静默退出
+- 关机错过会在下次开机补跑（StartWhenAvailable）
+- 查看：`Get-ScheduledTaskInfo -TaskName "JavaLearningAutoCommit"`
+- 删除：`Unregister-ScheduledTask -TaskName "JavaLearningAutoCommit" -Confirm:$false`
+
+**远程**
+- 仓库：`https://github.com/banya818/java-learning`
+- 用户名必须写 **`banya818`**（全小写），写成 Banya618 会报 Repository not found
+- 不要在 GitHub 网页上直接改文件 —— 会和本地历史分叉，每次都要合并
 
 ## 相关文件
 
